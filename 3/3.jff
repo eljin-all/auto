@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structure>
+	<type>pda</type>
+	<automaton>
+		<!-- Состояния -->
+		<state id="0" name="q0">
+			<x>150.0</x>
+			<y>200.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="qc">
+			<x>300.0</x>
+			<y>100.0</y>
+		</state>
+		<state id="2" name="q1">
+			<x>450.0</x>
+			<y>200.0</y>
+			<final/>
+		</state>
+		<!-- Переходы по 'a' (+1) -->
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>a</read>
+			<pop>Z</pop>
+			<push>PZ</push>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>a</read>
+			<pop>P</pop>
+			<push>PP</push>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>a</read>
+			<pop>M</pop>
+			<push/>
+		</transition>
+		<!-- Переходы по 'b' (+1) -->
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>b</read>
+			<pop>Z</pop>
+			<push>PZ</push>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>b</read>
+			<pop>P</pop>
+			<push>PP</push>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>b</read>
+			<pop>M</pop>
+			<push/>
+		</transition>
+		<!-- Переходы по 'c' (-2) -->
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>c</read>
+			<pop>Z</pop>
+			<push>MMZ</push>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>c</read>
+			<pop>M</pop>
+			<push>MMM</push>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>c</read>
+			<pop>P</pop>
+			<push/>
+		</transition>
+		<!-- Разрешение второго вычитания из qc -->
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read/>
+			<pop>P</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read/>
+			<pop>Z</pop>
+			<push>MZ</push>
+		</transition>
+		<!-- Допуск по финальному состоянию -->
+		<transition>
+			<from>0</from>
+			<to>2</to>
+			<read/>
+			<pop>Z</pop>
+			<push>Z</push>
+		</transition>
+	</automaton>
+</structure>
